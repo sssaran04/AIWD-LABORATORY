@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Event Registrations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glass-container">
+        <h1>Admin Check</h1>
+        <p class="subtitle">Search for student allocations</p>
+        
+        <div class="form-group">
+            <label for="searchRegno">Register Number</label>
+            <input type="text" id="searchRegno" placeholder="Enter Registration No.">
+        </div>
+        
+        <button onclick="searchRegistration()" class="btn">Search</button>
+
+        <div id="errorMsg" class="error-text" style="display:none;"></div>
+
+        <div id="searchResult" class="result-card">
+            <div class="result-row">
+                <span class="result-label">Register Number:</span>
+                <span class="result-value" id="resRegno"></span>
+            </div>
+            <div class="result-row">
+                <span class="result-label">Name:</span>
+                <span class="result-value" id="resName"></span>
+            </div>
+            <div class="result-row" style="flex-direction: column; gap: 0.5rem; align-items: flex-start;">
+                <span class="result-label">Events Registered:</span>
+                <span class="result-value" id="resEvents" style="text-align: left; background: rgba(59, 130, 246, 0.2); padding: 0.5rem 1rem; border-radius: 4px; width: 100%; box-sizing: border-box;"></span>
+            </div>
+        </div>
+
+        <div class="admin-nav">
+            <a href="index.html">&larr; Back to Registration</a>
+        </div>
+    </div>
+
+    <script>
+        async function searchRegistration() {
+            const regno = document.getElementById('searchRegno').value.trim();
+            const resultDiv = document.getElementById('searchResult');
+            const errorDiv = document.getElementById('errorMsg');
+            
+            errorDiv.style.display = 'none';
+            resultDiv.style.display = 'none';
+
+            if (!regno) {
+                errorDiv.innerText = "Please enter a Register Number.";
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/admin/search?regno=${encodeURIComponent(regno)}`);
+                const data = await response.json();
+
+                if (!response.ok) {
+                    errorDiv.innerText = data.error || "An error occurred.";
+                    errorDiv.style.display = 'block';
+                } else {
+                    document.getElementById('resRegno').innerText = data.regno;
+                    document.getElementById('resName').innerText = data.name;
+                    document.getElementById('resEvents').innerHTML = data.events;
+                    resultDiv.style.display = 'block';
+                }
+            } catch (err) {
+                errorDiv.innerText = "Failed to connect to the server.";
+                errorDiv.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

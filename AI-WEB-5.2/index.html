@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration & Countdown Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Event Registration</h1>
+        
+        <div class="countdown-section">
+            <h2>Event Countdown</h2>
+            <div class="countdown-display">
+                <div class="time-unit">
+                    <span class="time-value" id="days">0</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="separator">:</div>
+                <div class="time-unit">
+                    <span class="time-value" id="hours">0</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="separator">:</div>
+                <div class="time-unit">
+                    <span class="time-value" id="minutes">0</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="separator">:</div>
+                <div class="time-unit">
+                    <span class="time-value" id="seconds">0</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
+            <div class="status-message" id="statusMessage"></div>
+        </div>
+
+        <form class="registration-form" id="registrationForm">
+            <h2>Registration Form</h2>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="attendees">Number of Attendees</label>
+                <input type="number" id="attendees" name="attendees" min="1" required>
+            </div>
+            <button type="submit" id="submitBtn" class="btn-submit">Register Now</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

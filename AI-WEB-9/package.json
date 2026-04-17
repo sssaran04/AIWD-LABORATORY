@@ -1,0 +1,16 @@
+{
+  "name": "event-registration-mongodb",
+  "version": "1.0.0",
+  "description": "Event Registration System using MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.22.1",
+    "mongodb": "^6.21.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

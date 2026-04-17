@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glass-container">
+        <h1>Event Registration</h1>
+        <p class="subtitle">Select up to 3 events to participate</p>
+        
+        <form action="/submit" method="POST" id="regForm">
+            <div class="form-group">
+                <label for="regno">Register Number</label>
+                <input type="text" id="regno" name="regno" required placeholder="e.g. 23CS101">
+            </div>
+            
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+                <label>Select Events (Max 3)</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="events" value="Coding Challenge"> Coding Challenge
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="events" value="Debugging Contest"> Debugging Contest
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="events" value="Web Design"> Web Design
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="events" value="Quiz Competition"> Quiz Competition
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="events" value="Paper Presentation"> Paper Presentation
+                    </label>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn" id="submitBtn">Register Now</button>
+        </form>
+
+        <div class="admin-nav">
+            <a href="admin.html">Admin Panel &rarr;</a>
+        </div>
+    </div>
+
+    <script>
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const maxAllowed = 3;
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', () => {
+                const checkedCount = document.querySelectorAll('input[type="checkbox"]:checked').length;
+                
+                if (checkedCount >= maxAllowed) {
+                    checkboxes.forEach(box => {
+                        if (!box.checked) {
+                            box.disabled = true;
+                        }
+                    });
+                } else {
+                    checkboxes.forEach(box => {
+                        box.disabled = false;
+                    });
+                }
+            });
+        });
+
+        // Form validation before submit
+        document.getElementById('regForm').addEventListener('submit', function(e) {
+            const checkedCount = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            if (checkedCount === 0) {
+                e.preventDefault();
+                alert('Please select at least 1 event.');
+            }
+        });
+    </script>
+</body>
+</html>

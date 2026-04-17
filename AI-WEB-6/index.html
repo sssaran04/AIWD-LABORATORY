@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Event Management System</h1>
+        
+        <div class="events-container">
+            <div class="event">
+                <h3>Web Development Workshop</h3>
+                <p><strong>Date:</strong> April 15, 2026</p>
+                <div class="event-details" style="display:none;">
+                    <p>Learn modern web development with HTML, CSS, and JavaScript. This workshop covers responsive design, jQuery, and best practices.</p>
+                    <button class="register-btn">Register</button>
+                </div>
+                <button class="toggle-details-btn">Show Details</button>
+            </div>
+
+            <div class="event">
+                <h3>Advanced Java Programming</h3>
+                <p><strong>Date:</strong> April 20, 2026</p>
+                <div class="event-details" style="display:none;">
+                    <p>Master advanced Java concepts including multithreading, design patterns, and Spring framework. Ideal for intermediate programmers.</p>
+                    <button class="register-btn">Register</button>
+                </div>
+                <button class="toggle-details-btn">Show Details</button>
+            </div>
+
+            <div class="event">
+                <h3>Data Science Fundamentals</h3>
+                <p><strong>Date:</strong> April 25, 2026</p>
+                <div class="event-details" style="display:none;">
+                    <p>Explore data analysis, visualization, and machine learning basics using Python. Hands-on projects included.</p>
+                    <button class="register-btn">Register</button>
+                </div>
+                <button class="toggle-details-btn">Show Details</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

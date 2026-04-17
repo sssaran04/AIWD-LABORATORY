@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fest 2026 | Innovation & Culture</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="blob-c">
+        <div class="shape-blob"></div>
+        <div class="shape-blob one"></div>
+        <div class="shape-blob two"></div>
+    </div>
+
+    <!-- Bootstrap Responsive Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark glass-nav">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">TECH<span>FEST</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#register">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="main-header" data-aos="zoom-out">
+        <div class="container-fluid">
+            <div class="badge">JANUARY 2026</div>
+            <h1>Annual Tech & Cultural <br><span>Fest 2026</span></h1>
+            <p>Experience Innovation • Creativity • Entertainment</p>
+        </div>
+    </header>
+
+    <main class="container-fluid">
+        <div class="container">
+            <!-- Hero Banner Section -->
+            <section class="hero-banner-section" data-aos="fade-up">
+                <div class="hero-card">
+                    <div class="hero-label">Official Event Poster</div>
+                    <img src="banner.jpg" alt="Event Banner" class="huge-banner img-fluid">
+                    <div class="hero-overlay"></div>
+                </div>
+            </section>
+
+            <!-- Media Grid - Responsive -->
+            <section class="media-grid">
+                <div class="row g-4">
+                    <div class="col-lg-8 col-md-12">
+                        <div class="media-card" data-aos="fade-right">
+                            <h2>Promotional Video</h2>
+                            <div class="video-wrapper">
+                                <video controls>
+                                    <source src="promo.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12">
+                        <div class="media-card" data-aos="fade-left">
+                            <h2>Background Audio</h2>
+                            <div class="audio-inner">
+                                <p>Tune into the vibe of Fest 2026</p>
+                                <audio controls>
+                                    <source src="intro.mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Registration Form Section - Responsive -->
+            <section id="register" class="form-section" data-aos="fade-up">
+                <div class="form-header">
+                    <h2>Secure Your Spot</h2>
+                    <p>Fill in the details below to join the revolution.</p>
+                </div>
+
+                <form onsubmit="handleSubmit(event)">
+                    <!-- Section 1: Basic Details -->
+                    <div class="form-section-title">👤 Section 1: Basic Details</div>
+                    
+                    <div class="input-group">
+                        <label class="form-label">Full Name <span class="required">*</span></label>
+                        <input type="text" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="form-label">Email Address <span class="required">*</span></label>
+                        <input type="email" class="form-control" placeholder="email@example.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="form-label">Phone Number <span class="required">*</span></label>
+                        <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="form-label">College Name <span class="required">*</span></label>
+                        <input type="text" class="form-control" placeholder="Your College Name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="form-label">Year of Study <span class="required">*</span></label>
+                        <select class="form-select" required>
+                            <option value="">Select Year</option>
+                            <option>1st Year</option>
+                            <option>2nd Year</option>
+                            <option>3rd Year</option>
+                            <option>4th Year</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="form-label">Department <span style="color: #cbd5e1;">(optional)</span></label>
+                        <input type="text" class="form-control" placeholder="Eg: CSE, ECE">
+                    </div>
+
+                    <!-- Section 2: Choose Events -->
+                    <div class="form-section-title">🎯 Section 2: Choose Events <span class="required">*</span></div>
+                    
+                    <div class="checkbox-grid">
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="events" value="coding">
+                            <span class="checkbox-content">Coding Contest</span>
+                        </label>
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="events" value="hackathon">
+                            <span class="checkbox-content">Hackathon</span>
+                        </label>
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="events" value="aiml">
+                            <span class="checkbox-content">AI/ML Workshop</span>
+                        </label>
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="events" value="webdev">
+                            <span class="checkbox-content">Web Dev Workshop</span>
+                        </label>
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="events" value="gaming">
+                            <span class="checkbox-content">Gaming Tournament</span>
+                        </label>
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="events" value="paper">
+                            <span class="checkbox-content">Paper Presentation</span>
+                        </label>
+                    </div>
+
+                    <!-- Section 3: Skills & Interests -->
+                    <div class="form-section-title">🧠 Section 3: Skills & Interests</div>
+                    
+                    <div class="input-group">
+                        <label class="form-label">Skill Level <span class="required">*</span></label>
+                        <select class="form-select" required>
+                            <option value="">Select Level</option>
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Advanced</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="form-label">Domain Interests <span class="required">*</span></label>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-card-small">
+                                <input type="checkbox" name="domains" value="aiml">
+                                <span class="checkbox-content">AI/ML</span>
+                            </label>
+                            <label class="checkbox-card-small">
+                                <input type="checkbox" name="domains" value="webdev">
+                                <span class="checkbox-content">Web Development</span>
+                            </label>
+                            <label class="checkbox-card-small">
+                                <input type="checkbox" name="domains" value="appdev">
+                                <span class="checkbox-content">App Development</span>
+                            </label>
+                            <label class="checkbox-card-small">
+                                <input type="checkbox" name="domains" value="cyber">
+                                <span class="checkbox-content">Cybersecurity</span>
+                            </label>
+                            <label class="checkbox-card-small">
+                                <input type="checkbox" name="domains" value="data">
+                                <span class="checkbox-content">Data Science</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Participation Type -->
+                    <div class="form-section-title">🧑‍🤝‍🧑 Section 4: Participation Type</div>
+                    
+                    <div class="input-group">
+                        <label class="form-label">Participation Mode <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="participation" value="solo" required onchange="toggleTeamFields()">
+                                <span class="radio-content">Solo</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="participation" value="team" onchange="toggleTeamFields()">
+                                <span class="radio-content">Team</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Team Fields (Hidden by default) -->
+                    <div id="teamFields" class="team-fields" style="display: none;">
+                        <div class="input-group">
+                            <label class="form-label">Team Name</label>
+                            <input type="text" class="form-control" placeholder="Your awesome team name" id="teamName">
+                        </div>
+
+                        <div class="input-group">
+                            <label class="form-label">Number of Members</label>
+                            <input type="number" class="form-control" placeholder="Enter number of members" id="teamMembers" min="2" max="10">
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn submit-btn w-100">Complete Registration</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="py-5">
+        <div class="container">
+            <p>&copy; 2026 Annual Tech & Cultural Fest. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, mirror: true });
+        
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Validate that at least one event is selected
+            const eventsCheckboxes = document.querySelectorAll('input[name="events"]');
+            const eventSelected = Array.from(eventsCheckboxes).some(cb => cb.checked);
+            
+            // Validate that at least one domain is selected
+            const domainsCheckboxes = document.querySelectorAll('input[name="domains"]');
+            const domainSelected = Array.from(domainsCheckboxes).some(cb => cb.checked);
+            
+            if (!eventSelected) {
+                alert("⚠️ Please select at least one event!");
+                return;
+            }
+            
+            if (!domainSelected) {
+                alert("⚠️ Please select at least one domain interest!");
+                return;
+            }
+            
+            alert("✨ Registration Successful!");
+            event.target.reset();
+            const first = event.target.querySelector('input, select, textarea');
+            if (first) first.focus();
+        }
+
+        function toggleTeamFields() {
+            const teamFields = document.getElementById('teamFields');
+            const teamRadio = document.querySelector('input[name="participation"][value="team"]');
+            const teamNameInput = document.getElementById('teamName');
+            const teamMembersInput = document.getElementById('teamMembers');
+            
+            if (teamRadio.checked) {
+                teamFields.style.display = 'block';
+                teamNameInput.required = true;
+                teamMembersInput.required = true;
+            } else {
+                teamFields.style.display = 'none';
+                teamNameInput.required = false;
+                teamMembersInput.required = false;
+                teamNameInput.value = '';
+                teamMembersInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
